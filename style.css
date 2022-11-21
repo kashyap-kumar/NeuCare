@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: #2C76E4; /* brand color */
+    --secondary-color: #212C3E; /* bold text */
+    --tertiary-color: #30425E; /* body text */
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #E2EEFF;
+}
