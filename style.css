@@ -59,3 +59,30 @@ body {
     background-color: var(--tertiary-color);
     color: #ffffff;
 }
+
+/* specialities */
+.specialities h1{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+.specialities .card{
+    width: 100%;
+    max-width: 240px;
+    margin: auto;
+    border-radius: 40px;
+    border: none;
+}
+.specialities .card img{
+    width: 120px;
+}
+.specialities .card .card-title{
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--primary-color);
+}
+.specialities .card .card-text{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--tertiary-color);
+}
