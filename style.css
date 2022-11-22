@@ -5,12 +5,57 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --primary-color: #2C76E4; /* brand color */
-    --secondary-color: #212C3E; /* bold text */
-    --tertiary-color: #30425E; /* body text */
+:root {
+    --primary-color: #2c76e4; /* brand color */
+    --secondary-color: #212c3e; /* bold text */
+    --tertiary-color: #30425e; /* body text */
 }
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #E2EEFF;
+    background-color: #e2eeff;
+}
+
+/* styles for navbar */
+.navbar a{
+    color: var(--tertiary-color);
+}
+.navbar-brand{
+    color: var(--secondary-color);
+}
+.navbar-brand > span {
+    color: var(--primary-color);
+}
+.navbar .navbar-nav .nav-item .nav-link.active {
+    color: var(--primary-color);
+}
+.nav-item {
+    margin-left: 18px;
+    text-align: center;
+}
+.navbar .navbar-nav .nav-item .register-btn{
+    border:1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.navbar .navbar-nav .nav-item .register-btn:hover{
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* styles for header */
+.header h1 {
+    color: var(--secondary-color);
+}
+.header h1 > span {
+    color: var(--primary-color);
+}
+.header p {
+    color: var(--tertiary-color);
+}
+.header-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+.header-btn:hover {
+    background-color: var(--tertiary-color);
+    color: #ffffff;
 }
