@@ -14,6 +14,10 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: #e2eeff;
 }
+.section-heading{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
 
 /* styles for navbar */
 .navbar a{
@@ -61,10 +65,6 @@ body {
 }
 
 /* specialities */
-.specialities h1{
-    color: var(--secondary-color);
-    font-weight: 600;
-}
 .specialities .card{
     width: 100%;
     max-width: 240px;
@@ -85,4 +85,35 @@ body {
     font-weight: 500;
     line-height: 1.6;
     color: var(--tertiary-color);
+}
+
+/* top doctors */
+.top-doctors .card{
+    border-radius: 40px;
+    padding: 20px;
+    border: none;
+    max-width: 420px;
+}
+.top-doctors .card img{
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.top-doctors .card .card-title{
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+.top-doctors .card .card-text{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tertiary-color);
+}
+.top-doctors .card .review{
+    font-size: 10px;
+}
+.top-doctors .fa-star,
+.top-doctors .fa-star-half-stroke{
+    color: #E2DB20;
 }
