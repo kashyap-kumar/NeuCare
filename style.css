@@ -18,6 +18,9 @@ body {
     color: var(--secondary-color);
     font-weight: 600;
 }
+a{
+    text-decoration: none;
+}
 
 /* styles for navbar */
 .navbar a{
@@ -168,4 +171,38 @@ body {
 .rating .fa-quote-right{
     color: var(--primary-color);
     margin-left: auto;
+}
+
+/* basic-info */
+.basic-info{
+    background-color: var(--primary-color);
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.basic-info .container{
+    gap: 25px;
+}
+.basic-info .display-6{
+    font-weight: 500;
+}
+
+/* footer section */
+footer{
+    background-color: var(--secondary-color);
+    color: #E2EEFF;
+}
+footer ul{
+    list-style-type: none;
+}
+footer ul li{
+    margin-bottom: 10px;
+}
+footer li a{
+    color: #E2EEFF;
+    display: inline-block; /* inline element is not affected by transform */
+    transition: 0.2s;
+}
+footer li a:hover{
+    color: var(--primary-color);
+    transform: translateX(8px);
 }
