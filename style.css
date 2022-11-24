@@ -117,3 +117,55 @@ body {
 .top-doctors .fa-star-half-stroke{
     color: #E2DB20;
 }
+
+/* testimonials */
+.testimonial{
+    overflow: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    /* hide scrollbar */
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* Edge */
+}
+.testimonial::-webkit-scrollbar{ /* hide scrollbar for chrome, safari and opera */
+    display: none;
+}
+.testimonial .card{
+    display: inline-flex;
+    min-width: 300px;
+    white-space: normal;
+    border-radius: 40px;
+    padding: 30px;
+    gap: 15px;
+    border: none;
+    margin: 0 8px;
+}
+.testimonial .person-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.testimonial .person-info img{
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.testimonial .person-info h5{
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+.testimonial .card .comment{
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.6;
+}
+.testimonial .rating{
+    color: #E2DB20;
+    display: flex;
+    align-items: center;
+}
+.rating .fa-quote-right{
+    color: var(--primary-color);
+    margin-left: auto;
+}
