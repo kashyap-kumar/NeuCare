@@ -23,8 +23,13 @@ a{
 }
 
 /* styles for navbar */
+.navbar{
+    background-color: #E2EEFF;
+    transition: top 0.3s;
+}
 .navbar a{
     color: var(--tertiary-color);
+    font-weight: 500;
 }
 .navbar-brand{
     color: var(--secondary-color);
