@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #2c76e4; /* brand color */
+    --secondary-color: #212c3e; /* bold text */
+    --tertiary-color: #30425e; /* body text */
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #e2eeff;
+}
+.section-heading{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+}
+
+/* navbar */
+.navbar{
+    background-color: var(--primary-color);
+}
+.navbar img{
+    width: 64px;
+    height: 64px;
+}
+.navbar .navbar-brand{
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* search bar */
+.search-bar form button{
+    background-color: var(--primary-color);
+}
+
+/* different sections e.g. recommended, top doctors, etc */
+.section-heading{
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.doctor-card{
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    padding: 24px;
+    font-size: 16px;
+    color: var(--tertiary-color);
+}
+.doctor-card .card-image{
+    display: flex;
+}
+.doctor-card img{
+    width: 140px;
+    height: 140px;
+    border-radius: 30px;
+    align-self: center;
+}
+.doctor-card .card-body{
+    padding: 0;
+    position: relative;
+}
+.card-body .doctor-name{
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+.card-body>p{
+    font-weight: 500;
+}
+.doctor-card .experience{
+    padding: 0.2em 0;
+    display: flex;
+    align-items: center;
+    column-gap: 0.7em;
+    font-weight: 500;
+}
+.doctor-card .experience i{
+    width: 1em;
+    text-align: center;
+    color: var(--primary-color);
+}
+.card-body .btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.4em 0.7em;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-radius: 30px;
+    font-size: 0.9em;
+}
+@media screen and (max-width: 500px) {
+    .doctor-card{
+        padding: 15px;
+        border-radius: 36px;
+        font-size: 14px;
+    }
+    .doctor-card img{
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        align-self: flex-start;
+    }
+}
+
+/* common health issues */
+.additional-sections{
+    padding: 0 8px;
+}
+.additional-sections .add-sec-extra{
+    background-color: #FFFFFF;
+    border-radius: 30px;
+}
+
+.additional-sections .list-group-item{
+    display: flex;
+    column-gap: 0.5em;
+}
+.additional-sections i{
+    color: var(--primary-color);
+}
+.additional-sections a{
+    color: var(--tertiary-color);
+}
+.additional-sections a:hover{
+    color: var(--primary-color);
+}
+
+/* speciality card */
+.specialities-container{
+    overflow: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 1rem;
+    /* hide scrollbar */
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* Edge */
+}
+.specialities-container::-webkit-scrollbar{ /* hide scrollbar for chrome, safari and opera */
+    display: none;
+}
+.speciality-card{
+    display: inline-flex;
+    min-width: 300px;
+    border: none;
+    border-radius: 38px;
+}
+.speciality-card img{
+    width: 130px;
+    height: 130px;
+}
+.speciality-card .card-title{
+    color: var(--primary-color);
+    font-weight: 600;
+    line-height: 1.6;
+}
+.speciality-card .card-text{
+    color: var(--tertiary-color);
+    font-weight: 500;
+}
