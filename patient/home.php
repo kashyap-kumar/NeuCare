@@ -80,55 +80,39 @@ if (isset($_GET['submit'])) {
             <h4 class="col-12 col-sm-10 col-md-8 col-lg-9 col-xl-8 mb-4 section-heading">Recommended For You</h4>
 
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-
-                <div class="doctor-card mb-3">
-                    <div class="card-image">
-                        <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                <?php
+                    require "../config/connection.php";
+                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID GROUP BY d.ID, d.Name, d.Experience, d.Specialization ORDER BY d.Experience DESC LIMIT 3";
+                    $result = $conn->query($sql);
+                    while($doctor = $result->fetch_assoc()):
+                ?>
+                    <div class="doctor-card mb-3">
+                        <div class="card-image">
+                            <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-0 doctor-name"><?= $doctor['Name'] ?></h4>
+                            <p class="mb-0"><?= $doctor['Specialization'] ?></p>
+                            <div class="experience">
+                                <i class="fa-regular fa-clock"></i>
+                                <span><?= $doctor['Experience'] ?>+ yrs of experience</span>
+                            </div>
+                            <div class="experience">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span><?= $doctor['Cities'] ?></span>
+                            </div>
+                            <div class="experience">
+                                <i class="fa-regular fa-star"></i>
+                                <span>4.5 (314)</s>
+                            </div>
+                            <a href="../doctor/profile.php?id=<?= $doctor['ID'] ?>" class="btn">View Profile</a>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="mb-0 doctor-name">Dr Kashyap Kumar</h4>
-                        <p class="mb-0">Primary Care Specialist</p>
-                        <div class="experience">
-                            <i class="fa-regular fa-clock"></i>
-                            <span>10+ yrs of experience</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Rangia, Guwahati</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-regular fa-star"></i>
-                            <span>4.5 (314)</s>
-                        </div>
-                        <a href="#" class="btn">View Profile</a>
-                    </div>
-                </div>
-
-                <div class="doctor-card mb-3">
-                    <div class="card-image">
-                        <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="mb-0 doctor-name">Dr Kashyap Kumar</h4>
-                        <p class="mb-0">Primary Care Specialist</p>
-                        <div class="experience">
-                            <i class="fa-regular fa-clock"></i>
-                            <span>10+ yrs of experience</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Rangia, Guwahati</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-regular fa-star"></i>
-                            <span>4.5 (314)</s>
-                        </div>
-                        <a href="#" class="btn">View Profile</a>
-                    </div>
-                </div>
+                <?php endwhile; ?>
 
             </div>
 
+            <!-- Common Health Issues -->
             <div class="additional-sections common-health-issues col-12 col-sm-10 col-md-8 col-lg-3 col-xl-3">
                 <div class="add-sec-extra  p-4 mx-2">
                     <h5 class="text-center section-heading mb-3">Common Health Issues</h5>
@@ -172,51 +156,35 @@ if (isset($_GET['submit'])) {
 
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
 
-                <div class="doctor-card mb-3">
-                    <div class="card-image">
-                        <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                <?php
+                    require "../config/connection.php";
+                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID GROUP BY d.ID, d.Name, d.Experience, d.Specialization LIMIT 3";
+                    $result = $conn->query($sql);
+                    while($doctor = $result->fetch_assoc()):
+                ?>
+                    <div class="doctor-card mb-3">
+                        <div class="card-image">
+                            <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-0 doctor-name"><?= $doctor['Name'] ?></h4>
+                            <p class="mb-0"><?= $doctor['Specialization'] ?></p>
+                            <div class="experience">
+                                <i class="fa-regular fa-clock"></i>
+                                <span><?= $doctor['Experience'] ?>+ yrs of experience</span>
+                            </div>
+                            <div class="experience">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span><?= $doctor['Cities'] ?></span>
+                            </div>
+                            <div class="experience">
+                                <i class="fa-regular fa-star"></i>
+                                <span>4.5 (314)</s>
+                            </div>
+                            <a href="../doctor/profile.php?id=<?= $doctor['ID'] ?>" class="btn">View Profile</a>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="mb-0 doctor-name">Dr Kashyap Kumar</h4>
-                        <p class="mb-0">Primary Care Specialist</p>
-                        <div class="experience">
-                            <i class="fa-regular fa-clock"></i>
-                            <span>10+ yrs of experience</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Rangia, Guwahati</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-regular fa-star"></i>
-                            <span>4.5 (314)</s>
-                        </div>
-                        <a href="#" class="btn">View Profile</a>
-                    </div>
-                </div>
-
-                <div class="doctor-card mb-3">
-                    <div class="card-image">
-                        <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="mb-0 doctor-name">Dr Kashyap Kumar</h4>
-                        <p class="mb-0">Primary Care Specialist</p>
-                        <div class="experience">
-                            <i class="fa-regular fa-clock"></i>
-                            <span>10+ yrs of experience</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Rangia, Guwahati</span>
-                        </div>
-                        <div class="experience">
-                            <i class="fa-regular fa-star"></i>
-                            <span>4.5 (314)</s>
-                        </div>
-                        <a href="#" class="btn">View Profile</a>
-                    </div>
-                </div>
+                <?php endwhile; ?>
 
             </div>
 
@@ -302,6 +270,7 @@ if (isset($_GET['submit'])) {
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <?php $conn->close(); ?>
 </body>
 
 </html>
