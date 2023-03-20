@@ -64,6 +64,7 @@ a{
     height: 140px;
     border-radius: 30px;
     align-self: center;
+    object-fit: cover;
 }
 .doctor-card .card-body{
     padding: 0;

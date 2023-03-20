@@ -78,7 +78,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     $speciality = $_GET['speciality'];
                     $location = $_GET['location'];
                     
-                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID WHERE d.Specialization LIKE '%$speciality%' AND c.City LIKE '%$location%' GROUP BY d.ID, d.Name, d.Experience, d.Specialization ORDER BY d.Experience DESC";
+                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, d.Photo, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID WHERE d.Specialization LIKE '%$speciality%' AND c.City LIKE '%$location%' GROUP BY d.ID, d.Name, d.Experience, d.Specialization ORDER BY d.Experience DESC";
                     $result = $conn->query($sql);
                 
                     if ($result->num_rows > 0) {
@@ -86,7 +86,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             ?>
                 <div class="doctor-card mb-3">
                     <div class="card-image">
-                        <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                        <img src="../assets/uploads/doctors/<?= $doctor['Photo'] ?>" alt="doctor profile picture">
                     </div>
                     <div class="card-body">
                         <h4 class="mb-0 doctor-name"><?= $doctor['Name'] ?></h4>

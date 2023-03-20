@@ -12,7 +12,7 @@ require_once "../config/connection.php";
 $doctorid = $_GET['id']; // doctor id
 
 # fetch doctor details
-$sql = "SELECT `Name`, `Experience`, `Specialization` FROM `Doctor` WHERE `ID`=$doctorid";
+$sql = "SELECT `Name`, `Experience`, `Specialization`, `Photo` FROM `Doctor` WHERE `ID`=$doctorid";
 $doctor = $conn->query($sql)->fetch_assoc();
 
 # fetch number of patients
@@ -89,7 +89,7 @@ $conn->close();
 				<div class="p-3 bg-white h-100 rounded-4">
 					<h4 class="text-center">Doctor</h4>
 					<div class="d-flex align-items-center gap-2">
-						<img src="../assets/images/demo-doctor-4.jpeg" alt="profile pic" width="80px" height="80px"
+						<img src="../assets/uploads/doctors/<?= $doctor['Photo'] ?>" alt="profile pic" width="80px" height="80px"
 							class="bg-light rounded-4">
 						<div>
 							<h5 class="mb-0"><?= $doctor['Name'] ?></h5>

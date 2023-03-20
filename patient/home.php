@@ -72,13 +72,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
                 <?php
                     require "../config/connection.php";
-                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID GROUP BY d.ID, d.Name, d.Experience, d.Specialization ORDER BY d.Experience DESC LIMIT 3";
+                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, d.Photo, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID GROUP BY d.ID, d.Name, d.Experience, d.Specialization ORDER BY d.Experience DESC LIMIT 3";
                     $result = $conn->query($sql);
                     while($doctor = $result->fetch_assoc()):
                 ?>
                     <div class="doctor-card mb-3">
                         <div class="card-image">
-                            <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                            <img src="../assets/uploads/doctors/<?= $doctor['Photo'] ?>" alt="doctor profile picture">
                         </div>
                         <div class="card-body">
                             <h4 class="mb-0 doctor-name"><?= $doctor['Name'] ?></h4>
@@ -148,13 +148,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
                 <?php
                     require "../config/connection.php";
-                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID GROUP BY d.ID, d.Name, d.Experience, d.Specialization LIMIT 3";
+                    $sql = "SELECT d.ID, d.Name, d.Experience, d.Specialization, d.Photo, GROUP_CONCAT(c.City SEPARATOR ', ') AS Cities FROM Doctor d JOIN Doctor_Clinic dc ON d.ID = dc.DoctorID JOIN Clinic c ON dc.ClinicID = c.ID GROUP BY d.ID, d.Name, d.Experience, d.Specialization LIMIT 3";
                     $result = $conn->query($sql);
                     while($doctor = $result->fetch_assoc()):
                 ?>
                     <div class="doctor-card mb-3">
                         <div class="card-image">
-                            <img src="../assets/images/demo-doctor-1.jpg" alt="doctor profile picture">
+                            <img src="../assets/uploads/doctors/<?= $doctor['Photo'] ?>" alt="doctor profile picture">
                         </div>
                         <div class="card-body">
                             <h4 class="mb-0 doctor-name"><?= $doctor['Name'] ?></h4>
