@@ -113,10 +113,7 @@ $conn->close();
 					</div>
 					<div class="mt-3">
 						<h6>About</h6>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo libero et deserunt dignissimos
-							reiciendis consectetur velit deleniti laboriosam quod nulla eum repellat cupiditate beatae
-							at
-							voluptate molestiae, explicabo assumenda quae!</p>
+						<p>I have great work experience in my field. I have solved health issues of many patients.</p>
 					</div>
 				</div>
 			</div>
@@ -164,9 +161,7 @@ $conn->close();
 							</div>
 
 							<p class="mt-3 mb-4 pb-2">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip consequat.
+								This doctor have the right skills to cure your disease. Just go for him.
 							</p>
 
 							<div class="small d-flex justify-content-start">

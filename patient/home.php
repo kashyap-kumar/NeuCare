@@ -7,16 +7,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
 }
-
-// variables
-$speciality = $location = "";
-
-// this block will be executed after submitting the form (searching)
-if (isset($_GET['submit'])) {
-    // initialize variables with form data
-    $speciality = $_GET['speciality'];
-    $location = $_GET['location'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +50,7 @@ if (isset($_GET['submit'])) {
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-8">
 
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET"
+                <form action="doctor-search.php" method="GET"
                     class="py-3 py-md-5 input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="Speciality" aria-label="Speciality"
                         name="speciality" value="<?php echo $speciality; ?>">
@@ -240,18 +230,18 @@ if (isset($_GET['submit'])) {
                 </div>
 
                 <div class="speciality-card card text-center align-items-center py-3 h-100 h-sm-auto">
-                    <img src="../assets/images/neurology.svg" alt="neurology" class="card-img-top">
+                    <img src="../assets/images/urology.svg" alt="neurology" class="card-img-top">
                     <div class="card-body pt-1">
-                        <h5 class="card-title fs-4">Neurology</h5>
-                        <p class="card-text fs-6">the scientific study of nerves and their diseases</p>
+                        <h5 class="card-title fs-4">Urology</h5>
+                        <p class="card-text fs-6">the scientific study of kidney and their diseases</p>
                     </div>
                 </div>
 
                 <div class="speciality-card card text-center align-items-center py-3 h-100 h-sm-auto">
-                    <img src="../assets/images/neurology.svg" alt="neurology" class="card-img-top">
+                    <img src="../assets/images/cardiology.svg" alt="neurology" class="card-img-top">
                     <div class="card-body pt-1">
-                        <h5 class="card-title fs-4">Neurology</h5>
-                        <p class="card-text fs-6">the scientific study of nerves and their diseases</p>
+                        <h5 class="card-title fs-4">Cardiology</h5>
+                        <p class="card-text fs-6">the scientific study of heart and their diseases</p>
                     </div>
                 </div>
 
